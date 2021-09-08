@@ -14,7 +14,7 @@ find_package(HAL 1.9.0 EXACT COMPONENTS STM32H743VI_M7 REQUIRED)
 add_library(base_hal INTERFACE)
 target_link_libraries(base_hal INTERFACE
     HAL::STM32::H7::M7::CORTEX
-    CMSIS::STM32::H743xx::M7
+    CMSIS::STM32::H7::M7
     STM32::NoSys
 )
 
