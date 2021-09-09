@@ -18,6 +18,8 @@ target_link_libraries(base_hal INTERFACE
     STM32::NoSys
 )
 
+add_definitions(-DSTM32H743xx)
+
 add_executable(stm32-linker-error
     main.c
     stm32h7xx_hal_conf.h
@@ -30,6 +32,19 @@ target_link_libraries(stm32-linker-error
     HAL::STM32::H7::M7::RCC
     HAL::STM32::H7::M7::RCCEx
     HAL::STM32::H7::M7::PWR
+    HAL::STM32::H7::M7::PWREx
+    HAL::STM32::H7::M7::ADC
+    HAL::STM32::H7::M7::ADCEx
+    HAL::STM32::H7::M7::HCD
+    HAL::STM32::H7::M7::MMC
+    HAL::STM32::H7::M7::MMCEx
+    HAL::STM32::H7::M7::LL_SDMMC
+    HAL::STM32::H7::M7::LL_USB
+    HAL::STM32::H7::M7::DAC
+    HAL::STM32::H7::M7::FDCAN
+    HAL::STM32::H7::M7::I2C
+    HAL::STM32::H7::M7::I2CEx
+    HAL::STM32::H7::M7::RTC
     HAL::STM32::H7::M7::SPI
 )
 stm32_add_linker_script(stm32-linker-error PRIVATE STM32H743VITX_FLASH.ld)
